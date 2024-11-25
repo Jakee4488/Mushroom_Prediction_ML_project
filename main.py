@@ -1,16 +1,27 @@
 from GDP_Prediction import logger
 from GDP_Prediction.pipeline.Data_ingestion import DataIngestionTrainingPipeline
+from GDP_Prediction.pipeline.Data_Validation import DataValidationTrainingPipeline
 
-
-#
-STAGE_NAME="Data Ingestion"
-
+STAGE_NAME = "Data Ingestion stage"
 try:
-        logger.info(f"Running {STAGE_NAME} stage")
-        ingestion_pipeline = DataIngestionTrainingPipeline()
-        ingestion_pipeline.main()
-        logger.info(f"Completed {STAGE_NAME} stage")
-except Exception as e:  
-        logger.error(f"Failed to run {STAGE_NAME} stage")
-        logger.error(e)
+   logger.info(f">>>>>> stage {STAGE_NAME} started <<<<<<") 
+   data_ingestion = DataIngestionTrainingPipeline()
+   data_ingestion.main()
+   logger.info(f">>>>>> stage {STAGE_NAME} completed <<<<<<\n\nx==========x")
+except Exception as e:
+        logger.exception(e)
         raise e
+
+
+
+
+STAGE_NAME = "Data Validation stage"
+try:
+   logger.info(f">>>>>> stage {STAGE_NAME} started <<<<<<") 
+   data_ingestion = DataValidationTrainingPipeline()
+   data_ingestion.main()
+   logger.info(f">>>>>> stage {STAGE_NAME} completed <<<<<<\n\nx==========x")
+except Exception as e:
+        logger.exception(e)
+        raise e
+

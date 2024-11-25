@@ -1,1 +1,7 @@
-key: value
+COLUMNS:
+  Year and Quarter: object
+  GDP in Millions: int64
+  Date: object
+
+TARGET_COLOUMN:
+  name: GDP in Millions
