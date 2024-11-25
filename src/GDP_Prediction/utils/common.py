@@ -1,7 +1,7 @@
 import os
 from box.exceptions import BoxValueError
 import yaml
-from mlProject import logger
+from GDP_Prediction import logger
 import json
 import joblib
 from ensure import ensure_annotations
