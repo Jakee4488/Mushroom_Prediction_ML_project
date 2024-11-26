@@ -19,10 +19,19 @@ class DataTransformationTrainingPipeline:
                 status = f.read().split(" ")[-1]
 
             if status == "True":
-                config = ConfigurationManager()
-                data_transformation_config = config.get_data_transformation_config()
-                data_transformation = DataTransformation(config=data_transformation_config)
-                data_transformation.train_test_spliting()
+               config = ConfigurationManager()
+               data_transformation_config = config.get_data_transformation_config()
+    
+                # Create an instance of DataTransformation with the configuration
+               data_transformation = DataTransformation(config=data_transformation_config)
+    
+                # Perform the full data transformation process
+               train_pca, test_pca, target_train, target_test = data_transformation.transform()
+    
+                # Save transformed data
+               data_transformation.save_transformed_data(train_pca, test_pca, target_train, target_test)
+    
+               logger.info("Data transformation pipeline completed successfully and data saved.")
 
             else:
                 raise Exception("You data schema is not valid")

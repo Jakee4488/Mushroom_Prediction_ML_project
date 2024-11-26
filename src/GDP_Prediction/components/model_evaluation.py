@@ -27,11 +27,10 @@ class ModelEvaluation:
 
     def log_into_mlflow(self):
 
-        test_data = pd.read_csv(self.config.test_data_path)
-        model = joblib.load(self.config.model_path)
+        test_data = pd.read_csv(self.config.test_data_path).values
+        test_data_target=pd.read_csv(self.config.test_data_target).values
 
-        test_x = test_data.drop([self.config.target_column], axis=1)
-        test_y = test_data[[self.config.target_column]]
+        model = joblib.load(self.config.model_path)
 
 
         mlflow.set_registry_uri(self.config.mlflow_uri)
@@ -40,9 +39,9 @@ class ModelEvaluation:
 
         with mlflow.start_run():
 
-            predicted_qualities = model.predict(test_x)
+            predicted_qualities = model.predict(test_data)
 
-            (rmse, mae, r2) = self.eval_metrics(test_y, predicted_qualities)
+            (rmse, mae, r2) = self.eval_metrics(test_data_target, predicted_qualities)
             
             # Saving metrics as local
             scores = {"rmse": rmse, "mae": mae, "r2": r2}

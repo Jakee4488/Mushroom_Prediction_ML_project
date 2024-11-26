@@ -2,6 +2,7 @@ from GDP_Prediction.config.configuration import ConfigurationManager
 from GDP_Prediction.components.model_trainer import ModelTrainer
 from GDP_Prediction import logger
 from GDP_Prediction.components.model_evaluation import ModelEvaluation
+
 STAGE_NAME = "Model evaluation stage"
 
 class ModelEvaluationTrainingPipeline:
@@ -13,7 +14,6 @@ class ModelEvaluationTrainingPipeline:
         model_evaluation_config = config.get_model_evaluation_config()
         model_evaluation_config = ModelEvaluation(config=model_evaluation_config)
         model_evaluation_config.log_into_mlflow()
-
 
 
 if __name__ == '__main__':
