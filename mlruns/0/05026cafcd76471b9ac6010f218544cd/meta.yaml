@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/jacob/Desktop/GDP_Prediction_ML_project/mlruns/0/05026cafcd76471b9ac6010f218544cd/artifacts
+end_time: 1732579355023
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 05026cafcd76471b9ac6010f218544cd
+run_name: selective-dolphin-38
+run_uuid: 05026cafcd76471b9ac6010f218544cd
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1732579347937
+status: 3
+tags: []
+user_id: jacob

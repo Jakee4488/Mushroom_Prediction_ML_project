@@ -21,3 +21,14 @@
 8. Update the main.py
 
 9. Update the app.py
+
+
+
+
+import dagshub
+dagshub.init(repo_owner='Jakee4488', repo_name='GDP_Prediction_ML_project', mlflow=True)
+
+import mlflow
+with mlflow.start_run():
+  mlflow.log_param('parameter name', 'value')
+  mlflow.log_metric('metric name', 1)
