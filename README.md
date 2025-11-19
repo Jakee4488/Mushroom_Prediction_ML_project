@@ -31,8 +31,7 @@ Mushroom_Prediction_ML_project/
 │   ├── model_trainer.ipynb
 │   ├── model_evaluation.ipynb
 │   └── mushrooms.csv          # Raw dataset
-├── src/                       # Source code
-│   └── GDP_Prediction/        # Main package
+├── src/                       # Main package
 │       ├── components/        # ML Pipeline components
 │       ├── config/            # Configuration management
 │       ├── constants/         # Constant values
