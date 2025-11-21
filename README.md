@@ -1,4 +1,4 @@
-# Mushroom Classification ML Project
+# Mushroom Classification ML Project With MLOps Integration
 
 ## Overview
 
